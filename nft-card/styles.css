@@ -1,31 +1,43 @@
 body {
   font-family: "Outfit", sans-serif;
   background-color: hsl(217, 54%, 11%);
-  max-width: 375px;
-  display: block;
-  margin: 10% auto;
-  min-height: 100vh;
+  /* margin: 0 auto; */
+}
+
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .nft {
   background-color: hsl(216, 50%, 16%);
-  padding: 20px;
+  max-width: 275px;
+  min-height: 100%;
   border-radius: 20px;
+  margin: 40px 25px;
+  padding: 25px;
+}
+
+.nft__img,
+.nft__img--img-bottom,
+.nft__img:hover .nft__img--img-top {
+  width: 100%;
+  min-height: 275px;
 }
 
 .nft__img {
-  width: 100%;
   position: relative;
-  height: 335px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
 .nft__img--img-bottom {
   z-index: 0;
   position: absolute;
-  max-width: 335px;
   border-radius: 10px;
 }
 
@@ -38,8 +50,6 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1;
-  height: 100%;
-  width: 100%;
   border-radius: 10px;
   background-color: hsl(178, 100%, 50%, 0.3);
   cursor: pointer;
@@ -89,7 +99,7 @@ p,
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .nft__creator--avatar {
@@ -107,13 +117,36 @@ strong {
   font-weight: 300;
 }
 
-footer {
+footer p {
+  margin-top: 40px;
+  font-size: 0.6rem;
   text-align: center;
-  font-size: small;
-  margin-top: 20%;
-  color: hsl(0, 0%, 100%);
 }
 
 footer a {
   color: hsl(0, 0%, 100%);
+}
+
+/* larger than portrait phone  */
+@media screen and (min-width: 375px) {
+  p,
+  .nft__info--time {
+    font-size: 1.3em;
+  }
+  .container {
+    flex-flow: row wrap;
+  }
+}
+
+/* */
+@media screen and (min-width: 1440px) {
+  body {
+    background-color: hsl(215, 51%, 70%);
+  }
+  .nft {
+    box-shadow: 10px 15px 20px hsl(217, 54%, 11%);
+  }
+  footer p {
+    color: hsl(217, 54%, 11%);
+  }
 }
